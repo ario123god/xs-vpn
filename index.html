@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Privacy policy for XS-VPN by Ario Monajati.">
+  <title>XS-VPN Privacy Policy</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0b1220; --panel: #111c2e; --text: #e7edf7; --muted: #a8b6ca; --accent: #82d8ce; --line: #293951; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(ellipse at 50% -15%, #1b3550 0, var(--bg) 52rem); color: var(--text); font: 16px/1.72 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    header, main, footer { width: min(100% - 2rem, 780px); margin-inline: auto; }
+    header { padding: 4.5rem 0 2rem; }
+    .eyebrow { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: .4rem 0; font-size: clamp(2.4rem, 8vw, 4rem); letter-spacing: -.055em; line-height: 1.05; }
+    .subtitle, .meta, footer { color: var(--muted); }
+    .meta { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; font-size: .9rem; }
+    main { padding-bottom: 3rem; }
+    section { margin: 1rem 0; padding: 1.5rem clamp(1.1rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 18px; background: color-mix(in srgb, var(--panel) 92%, transparent); }
+    h2 { margin: 0 0 .7rem; font-size: 1.25rem; letter-spacing: -.02em; }
+    p { margin: .65rem 0; }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    .note { padding: .9rem 1rem; border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; background: #18283a; color: var(--muted); }
+    code { overflow-wrap: anywhere; color: var(--accent); }
+    footer { padding: 1rem 0 3rem; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">XS-VPN · Privacy</div>
+    <h1>Privacy policy</h1>
+    <p class="subtitle">What the XS-VPN Android app does with information.</p>
+    <div class="meta"><span>Publisher: Ario Monajati</span><span>Effective date: November 6, 2026</span></div>
+  </header>
+  <main>
+    <section>
+      <h2>About this policy</h2>
+      <p>This policy describes information flows identifiable in the current XS-VPN Android project. The app includes the upstream v2rayNG codebase and user-configurable proxy and VPN features. Your use of a selected server is also subject to that server operator’s practices.</p>
+      <p class="note"><strong>Privacy contact:</strong> <a href="mailto:thealangod55@icloud.com">thealangod55@icloud.com</a>.</p>
+    </section>
+    <section>
+      <h2>Information processed on your device</h2>
+      <p>The app stores configuration and preferences locally, including imported server profiles and subscription information, selected and favorite servers, recent servers, connection and test state, app settings, and an optional advertising age band. The age band offers “under 16,” “16 or older,” and “prefer not to say”; it is not a full birth date. App settings and profiles are stored in the app’s local data store. Device backup and uninstall behavior can depend on Android and your device settings.</p>
+      <p>Some connection, diagnostic, and server-test information is displayed or recorded in app logs. The code does not establish how long external server operators retain logs or whether every connection diagnostic remains only on your device.</p>
+    </section>
+    <section>
+      <h2>Server feed and proxy connections</h2>
+      <p>The app can request a list of XS-VPN server configurations from a configured feed at <code>http://45.83.246.41:8000/api/configs</code>. That request includes a feed authorization token. Because the configured URL uses HTTP, the request and response are not protected by HTTPS in transit; network intermediaries may be able to observe or alter them. The feed operator and network path can receive the device’s IP address and request metadata.</p>
+      <p>The feed/server implementation and deployment configuration were not present in the project files reviewed. We could not verify whether API access logs record IP addresses, request headers or paths; whether application diagnostics record request data; what log retention or rotation rules apply; or whether a reverse proxy, hosting provider or operating system records requests. Those practices are not confirmed. The feed uses a bearer authorization token, and because it is sent over HTTP it may be exposed to parties able to observe or alter traffic. No claim is made that the feed keeps no logs.</p>
+      <p>When you connect, your selected server and destination services process traffic routed through the proxy or VPN. Third-party VPN server operators’ logging, IP collection, diagnostic, and retention practices are unknown and are not verified by this policy. Depending on the protocol and destination encryption, a server operator may be able to observe connection metadata and traffic contents. XS-VPN does not control those operators’ practices.</p>
+      <p>The app can test server connectivity and latency. Some speed tests send test data through a candidate server to Cloudflare’s speed-test service. A test request can expose network metadata, including the server’s exit IP, to Cloudflare. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy policy</a>.</p>
+    </section>
+    <section>
+      <h2>Advertising and consent</h2>
+      <p>The Play Store build contains the Start.io advertising SDK and a Home banner slot. In the current code, Start.io initialization is fail-closed: the consent-platform and audience-review gates are set to false. The app therefore does not initialize Start.io or request ads. The F-Droid build does not include the Start.io SDK.</p>
+      <p>The project includes no Google User Messaging Platform (UMP) SDK integration, consent form, consent signal handling, or consent withdrawal flow. The optional age-band choice in the app is not advertising consent. Advertising must remain disabled unless a later version adds and correctly configures the necessary consent and audience handling.</p>
+      <p>If Start.io is enabled in a future version, Start.io may process information such as IP address, device and operating-system details, advertising identifiers, carrier or device settings, and ad interactions for advertising, measurement, fraud prevention, and related services. The exact data and purposes depend on the SDK and configuration in that release. Review <a href="https://www.start.io/policy/privacy-policy-site/">Start.io’s privacy policy</a> and <a href="https://www.start.io/privacy-faq/">privacy FAQ</a>, and the updated XS-VPN policy and consent choices before using an ad-enabled release.</p>
+    </section>
+    <section>
+      <h2>Other third-party services</h2>
+      <p>The app can contact external services for server configuration, connectivity checks, release information, DNS, IP information, and optional server speed tests. These services receive connection metadata when contacted. Which services are contacted depends on features you use and your settings. Their own privacy policies govern their processing.</p>
+    </section>
+    <section>
+      <h2>Your choices and requests</h2>
+      <p>You can manage or remove locally stored profiles and settings through app controls. You can choose an age band or “prefer not to say”; that choice does not enable ads in the current code. To ask about personal information or request access, correction, or deletion, contact <a href="mailto:thealangod55@icloud.com">thealangod55@icloud.com</a>. The publisher has not verified feed/server access logging, diagnostics, retention, or third-party VPN operator practices; contact the publisher with questions about those unresolved practices.</p>
+    </section>
+    <section>
+      <h2>Changes</h2>
+      <p>This policy may be updated when app behavior or service providers change. The effective date at the top identifies the version currently posted on this page.</p>
+    </section>
+  </main>
+  <footer>XS-VPN · Publisher: Ario Monajati</footer>
+</body>
+</html>
